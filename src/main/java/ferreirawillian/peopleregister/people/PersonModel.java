@@ -1,4 +1,4 @@
-package ferreirawillian.peopleregister;
+package ferreirawillian.peopleregister.people;
 
 import jakarta.persistence.*;
 
@@ -16,6 +16,7 @@ public class PersonModel {
     private String dateOfBirth;
     private String email;
     private String job;
+    private List<TaskModel> tasks;
 
     public PersonModel() {}
 
