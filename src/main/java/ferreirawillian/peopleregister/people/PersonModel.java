@@ -1,5 +1,6 @@
 package ferreirawillian.peopleregister.people;
 
+import ferreirawillian.peopleregister.task.TaskModel;
 import jakarta.persistence.*;
 
 //transforma em uma entidade(tabela) no banco de dados
@@ -16,16 +17,45 @@ public class PersonModel {
     private String dateOfBirth;
     private String email;
     private String job;
+    @OneToMany(mappedBy = "PersonModel") //Uma pessoa com muitas missoes
     private List<TaskModel> tasks;
 
     public PersonModel() {}
 
+    /*
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    * arrumar os construtores, aula 7, 18:30
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    * */
+
     public PersonModel(String cpf, String dateOfBirth, String email, String job, String name) {
-        this.cpf = getCpf();
-        this.dateOfBirth = getDateOfBirth();
-        this.email = getEmail();
-        this.job = getJob();
-        this.name = getName();
+        setCpf(cpf);
+        setDateOfBirth(dateOfBirth);
+        setEmail(email);
+        setJob(job);
+        setName(name);
     }
     public Long getId() {
         return id;
