@@ -2,11 +2,12 @@ package ferreirawillian.peopleregister.people;
 
 import ferreirawillian.peopleregister.task.TaskModel;
 import jakarta.persistence.*;
+import java.util.List;
 
 //transforma em uma entidade(tabela) no banco de dados
 //JPA = Java Persistence API
 @Entity
-@Table(name = "tb_people_register")
+@Table(name = "tb_people")
 public class PersonModel {
 
     @Id
@@ -17,9 +18,8 @@ public class PersonModel {
     private String dateOfBirth;
     private String email;
     private String job;
-    @OneToMany(mappedBy = "PersonModel") //Uma pessoa com muitas missoes
+    @OneToMany(mappedBy = "person")//Uma pessoa com muitas missoes
     private List<TaskModel> tasks;
-
     public PersonModel() {}
 
     /*
