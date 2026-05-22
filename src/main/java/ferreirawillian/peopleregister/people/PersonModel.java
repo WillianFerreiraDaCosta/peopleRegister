@@ -21,10 +21,12 @@ public class PersonModel {
 
     private String name;
 
+    @Column (unique = true)
     private String cpf;
 
     private String dateOfBirth;
 
+    @Column (unique = true)
     private String email;
 
     private String job;
